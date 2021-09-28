@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.cmmn.web.mapper.ProductMapper">
+    <select id="selectallproduct" resultType="hashMap">
+            select 
+            PRD_NUM					prd_num,
+            PRD_TYPE				prd_type,
+            PRD_NAME				prd_name,
+            PRD_PRICE				prd_price
+       <!-- PRD_REMAIN				prd_remain
+            PRD_REGIST_DATE			prd_regist_date,
+            PRD_MODIFICATION_DATE	prd_modfication_date,
+            PRD_DELETE_DATE			prd_delete_date -->
+            from product
+    </select>
+
+
+	<select id="buyList" resultType="hashMap" parameterType="hashmap">
+            select 
+            PRD_NUM					prd_num,
+            PRD_TYPE				prd_type,
+            PRD_NAME				prd_name,
+            PRD_PRICE				prd_price
+       <!-- PRD_REMAIN				prd_remain
+            PRD_REGIST_DATE			prd_regist_date,
+            PRD_MODIFICATION_DATE	prd_modfication_date,
+            PRD_DELETE_DATE			prd_delete_date -->
+            from product
+            where PRD_NUM = #{prd_num}
+    </select>
+    
+    
+</mapper>
